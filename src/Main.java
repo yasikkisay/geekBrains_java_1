@@ -40,7 +40,7 @@ public class Main {
     }
 
 //    #4 Написать метод, принимающий на вход два числа, и проверяющий что их сумма лежит в пределах
-// от 10 до 20(включительно), если да – вернуть true, в противном случае – false;
+//    от 10 до 20(включительно), если да – вернуть true, в противном случае – false;
     private static boolean checkNum(int num1, int num2) {
         boolean checkStatus = false;
         int sum = num1 + num2;
@@ -51,8 +51,8 @@ public class Main {
     }
 
 //    #5 Написать метод, которому в качестве параметра передается целое число,
-// метод должен напечатать в консоль положительное ли число передали, или отрицательное;
-// Замечание: ноль считаем положительным числом.
+//    метод должен напечатать в консоль положительное ли число передали, или отрицательное;
+//    Замечание: ноль считаем положительным числом.
     private static void positiveCheck(int num) {
         if (num >= 0) {
             System.out.println("Это положительное число");
@@ -62,7 +62,7 @@ public class Main {
     }
 
 //    #6 Написать метод, которому в качестве параметра передается целое число,
-// метод должен вернуть true, если число отрицательное
+//    метод должен вернуть true, если число отрицательное
     private static boolean negativeCheck(int num) {
         boolean negativeStatus = false;
         if (num < 0) {
@@ -72,27 +72,29 @@ public class Main {
     }
 
 //    #7 Написать метод, которому в качестве параметра передается строка, обозначающая имя,
-// метод должен вывести в консоль сообщение «Привет, указанное_имя!»
+//    метод должен вывести в консоль сообщение «Привет, указанное_имя!»
     private static void printName(String userName) {
         System.out.println("Привет, " + userName + "!");
     }
 
 //    #8 Написать метод, который определяет является ли год високосным, и выводит сообщение в консоль.
-// Каждый 4-й год является високосным, кроме каждого 100-го, при этом каждый 400-й – високосный
+//    Каждый 4-й год является високосным, кроме каждого 100-го, при этом каждый 400-й – високосный
     private static void leapYearCheck() {
-        //TODO дописать логику
-        int year = 1;
-//        Calendar calendar = Calendar.getInstance();
-//        year = calendar.get(calendar.YEAR);
-//        System.out.println(year);
-        System.out.println((year % 4 == 0) || (year % 100 != 0) || (year % 400 == 0));
-//        if ( (year % 4 == 0) && (year % 100 != 0) && (year % 400 == 0)) {
-//            System.out.println("Текущий год високосный.");
-//        }
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(calendar.YEAR);
+        if (year % 4 == 0) {
+            if ((year % 100 != 0) || (year % 400 == 0)) {
+                System.out.println(year + " - високосный год.");
+            } else {
+                System.out.println(year + " - невисокосный год.");
+            }
+        } else {
+            System.out.println(year + " - невисокосный год.");
+        }
     }
 
     private static void oddCheck(int num) {
-        boolean result = ((num % 2) == 0 || num != 1);
+        boolean result = ((num % 2) == 0);
         if (result) {
             System.out.println(num + " - четное число.");
         } else {
