@@ -92,7 +92,7 @@ public class Main {
             System.out.println(year + " - невисокосный год.");
         }
     }
-
+//  Проверка числа четное/нечетное
     private static void oddCheck(int num) {
         boolean result = ((num % 2) == 0);
         if (result) {
