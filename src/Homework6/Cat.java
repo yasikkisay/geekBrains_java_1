@@ -5,6 +5,7 @@ import java.text.MessageFormat;
 public class Cat extends Animal {
 
     private final String TYPE = "Кот";
+    private String domesticatedType;
 
     public Cat(float runLimit, float jumpLimit) {
         super(runLimit, jumpLimit);
@@ -29,4 +30,11 @@ public class Cat extends Animal {
         }
     }
 
+    public String getDomesticatedType() {
+        return domesticatedType;
+    }
+
+    public void setDomesticatedType(String domesticatedType) {
+        this.domesticatedType = domesticatedType;
+    }
 }

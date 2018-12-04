@@ -5,6 +5,15 @@ public abstract class Animal {
     private float runLimit;
     private float jumpLimit;
 
+    public enum AnimalType {
+        DOMESTIC("Домашнее"),
+        WILD("Дикое");
+
+        String animalTypeName;
+        AnimalType(String animalTypeName) {
+            this.animalTypeName = animalTypeName;
+        }
+    }
 
     public Animal(float runLimit, float jumpLimit) {
         this.runLimit = runLimit;
