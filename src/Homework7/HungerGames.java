@@ -16,10 +16,16 @@ public class HungerGames {
 
         ArrayList<Cat> catList = new ArrayList<>(Arrays.asList(cat1, cat2, cat3));
 
-        for (Cat cat : catList) {
-            cat.eat(plate1, 110);
-            System.out.println(cat.getName() + " поел и он " + cat.getHungerType());
-            System.out.println(cat.getCurrentFed());
-        }
+//        for (Cat cat : catList) {
+//            cat.eat(plate1, 110);
+//            System.out.println(cat.getName() + " поел и он " + cat.getHungerType());
+//            System.out.println(cat.getCurrentFed());
+//        }
+
+        catList.forEach((cat) -> {
+                cat.eat(plate1, 110);
+                System.out.println(cat.getName() + " поел и он " + cat.getHungerType());
+                System.out.println("Его сытость - " + cat.getCurrentFed() + " из " + cat.getFedLimit());
+        });
     }
 }
