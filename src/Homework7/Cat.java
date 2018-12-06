@@ -2,11 +2,10 @@ package Homework7;
 
 public class Cat {
 
-//    private boolean wellFed;
     private int currentFed;
     private int fedLimit;
     private String name;
-    private String hungerType;
+    private CatHungerType hungerType;
 
     public enum CatHungerType {
         HUNGRY("голодный"),
@@ -19,7 +18,6 @@ public class Cat {
     }
 
     public Cat(int fedLimit, String name) {
-//        this.wellFed = false;
         this.fedLimit = fedLimit;
         this.name = name;
         this.currentFed = 0;
@@ -39,9 +37,9 @@ public class Cat {
 
     public boolean isWellFed() {
         if (currentFed >= fedLimit) {
-            this.setHungerType(CatHungerType.WELL_FED.catHungerType);
+            this.setHungerType(CatHungerType.WELL_FED);
         } else {
-            this.setHungerType(CatHungerType.HUNGRY.catHungerType);
+            this.setHungerType(CatHungerType.HUNGRY);
         }
         return currentFed >= fedLimit;
     }
@@ -63,11 +61,11 @@ public class Cat {
     }
 
     public String getHungerType() {
-        return hungerType;
+        return hungerType.catHungerType;
     }
 
-    public void setHungerType(String hungerType) {
-        this.hungerType = hungerType;
+    public void setHungerType(CatHungerType catHungerType) {
+        this.hungerType = catHungerType;
     }
 
     public int getCurrentFed() {
